@@ -12,8 +12,10 @@ public:
     Graph();
     ~Graph();
 
-    void readGraph(std::string filename);
-    void writeGraph(std::string filename);
+    std::string type();
+    char typeChar();
+    bool readGraph(std::string filename);
+    bool writeGraph(std::string filename);
     void addEdge(int from, int to, int weight=1);
     void removeEdge(int from, int to);
     int changeEdge(int from, int to, int newWeight=1);
