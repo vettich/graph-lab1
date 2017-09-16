@@ -8,15 +8,17 @@ QMAKE_CXXFLAGS += -std=c++11
 
 SOURCES += main.cpp \
     graph.cpp \
-    graphadjlist.cpp \
-    graphadjmatrix.cpp \
-    graphlistofedges.cpp \
-    graphbase.cpp
+    dsu.cpp \
+    graphs/graphadjlist.cpp \
+    graphs/graphadjmatrix.cpp \
+    graphs/graphbase.cpp \
+    graphs/graphlistofedges.cpp
 
 HEADERS += \
     graph.h \
-    graphadjlist.h \
-    graphadjmatrix.h \
-    graphlistofedges.h \
-    graphbase.h
+    dsu.h \
+    graphs/graphadjlist.h \
+    graphs/graphadjmatrix.h \
+    graphs/graphbase.h \
+    graphs/graphlistofedges.h
 

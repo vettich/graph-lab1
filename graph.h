@@ -2,26 +2,38 @@
 #define GRAPH_H
 
 #include <string>
-#include <graphbase.h>
+#include <graphs/graphbase.h>
+#include <c++/7.1.1/type_traits>
 
 class Graph
 {
-    GraphBase *graph;
-
 public:
     Graph();
     ~Graph();
-
-    std::string type();
-    char typeChar();
-    bool readGraph(std::string filename);
-    bool writeGraph(std::string filename);
-    void addEdge(int from, int to, int weight=1);
-    void removeEdge(int from, int to);
-    int changeEdge(int from, int to, int newWeight=1);
+    void readGraph(std::string fileName);
+    void addEdge(int from,int to, int weight);
+    void removeEdge(int from,int to);
+    int changeEdge(int from,int to,int newWeight);
     void transformToAdjList();
     void transformToAdjMatrix();
     void transformToListOfEdges();
+    void writeGraph(std::string fileName);
+
+    Graph getSpainingTreePrima() const;
+    Graph getSpainingTreeKruscal() const;
+
+    Graph getSpainingTreeBoruvka() const;
+    int CheckEuler(bool &circleExist);
+    std::vector<int> getEuleranTourFleri();
+    std::vector<int> getEuleranTourEffective();
+
+    char type();
+    bool isGraph();
+    void print();
+private:
+    GraphBase* data;
+
 };
+
 
 #endif // GRAPH_H
